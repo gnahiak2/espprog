@@ -1,0 +1,73 @@
+# =========================
+# Rust
+# =========================
+
+target/
+Cargo.lock
+
+# Rust analyzer / IDE
+.vscode/
+.idea/
+
+# macOS
+.DS_Store
+
+# Logs
+*.log
+
+# =========================
+# ESP-IDF
+# =========================
+
+build/
+sdkconfig
+sdkconfig.old
+
+# ESP-IDF managed components
+managed_components/
+
+# CMake
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+compile_commands.json
+Makefile
+
+# Ninja
+.ninja_deps
+.ninja_log
+build.ninja
+
+# ESP-IDF Python env
+.python_env/
+venv/
+.venv/
+
+# Flash dumps / binaries
+*.bin
+*.elf
+*.map
+
+# Serial monitor output
+*.txt
+
+# Temporary files
+*.tmp
+*.swp
+
+# =========================
+# Generated firmware files
+# =========================
+
+firmware/build/
+firmware/sdkconfig
+firmware/sdkconfig.old
+
+# Rust release/debug
+cli/target/
+
+# =========================
+# Wakatime
+# =========================
+
+.wakatime-project
