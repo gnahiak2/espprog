@@ -2,7 +2,7 @@ use clap::Parser;
 use serialport::SerialPort;
 use std::fs::File;
 use std::io::{Write, BufRead, BufReader};
-use std::time:Duration;
+use std::time::Duration;
 
 const BUF_SIZE: usize = 256;
 
@@ -16,4 +16,4 @@ struct Args {
 
 }
 
-fn
+fn main

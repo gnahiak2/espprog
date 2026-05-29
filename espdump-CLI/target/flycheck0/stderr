@@ -1,7 +1,54 @@
-error: failed to parse manifest at `/Users/kaihang/hackclub/Horizons/espdump/espdump-CLI/Cargo.toml`
+   0.061957250s  INFO prepare_target{force=false package_id=espdump-CLI v0.0.1 (/Users/kaihang/hackclub/Horizons/espdump/espdump-CLI) target="espdump-CLI"}: cargo::core::compiler::fingerprint: fingerprint error for espdump-CLI v0.0.1 (/Users/kaihang/hackclub/Horizons/espdump/espdump-CLI)/Check { test: false }/TargetInner { name: "espdump-CLI", doc: true, ..: with_path("/Users/kaihang/hackclub/Horizons/espdump/espdump-CLI/src/main.rs", Edition2024) }
+   0.061984291s  INFO prepare_target{force=false package_id=espdump-CLI v0.0.1 (/Users/kaihang/hackclub/Horizons/espdump/espdump-CLI) target="espdump-CLI"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/kaihang/hackclub/Horizons/espdump/espdump-CLI/target/debug/.fingerprint/espdump-CLI-b00ac31e21b279e2/bin-espdump-CLI`
 
 Caused by:
-  failed to parse the `edition` key
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: <std::backtrace::Backtrace>::create
+   1: <std::io::error::Error as anyhow::context::ext::StdError>::ext_context::<alloc::string::String>
+   2: cargo_util::paths::read
+   3: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   4: cargo::core::compiler::fingerprint::prepare_target
+   5: cargo::core::compiler::compile
+   6: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   7: cargo::ops::cargo_compile::compile_ws
+   8: cargo::ops::cargo_compile::compile_with_exec
+   9: cargo::ops::cargo_compile::compile
+  10: cargo::commands::check::exec
+  11: <cargo::cli::Exec>::exec
+  12: cargo::cli::main
+  13: cargo::main
+  14: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  15: std::rt::lang_start::<()>::{closure#0}
+  16: std::rt::lang_start_internal
+  17: _main
+   0.099649833s  INFO prepare_target{force=false package_id=espdump-CLI v0.0.1 (/Users/kaihang/hackclub/Horizons/espdump/espdump-CLI) target="espdump-CLI"}: cargo::core::compiler::fingerprint: fingerprint error for espdump-CLI v0.0.1 (/Users/kaihang/hackclub/Horizons/espdump/espdump-CLI)/Check { test: true }/TargetInner { name: "espdump-CLI", doc: true, ..: with_path("/Users/kaihang/hackclub/Horizons/espdump/espdump-CLI/src/main.rs", Edition2024) }
+   0.099660416s  INFO prepare_target{force=false package_id=espdump-CLI v0.0.1 (/Users/kaihang/hackclub/Horizons/espdump/espdump-CLI) target="espdump-CLI"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/kaihang/hackclub/Horizons/espdump/espdump-CLI/target/debug/.fingerprint/espdump-CLI-f5e6ade090ebb56f/test-bin-espdump-CLI`
 
 Caused by:
-  this version of Cargo is older than the `2026` edition, and only supports `2015`, `2018`, `2021`, and `2024` editions.
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: <std::backtrace::Backtrace>::create
+   1: <std::io::error::Error as anyhow::context::ext::StdError>::ext_context::<alloc::string::String>
+   2: cargo_util::paths::read
+   3: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   4: cargo::core::compiler::fingerprint::prepare_target
+   5: cargo::core::compiler::compile
+   6: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   7: cargo::ops::cargo_compile::compile_ws
+   8: cargo::ops::cargo_compile::compile_with_exec
+   9: cargo::ops::cargo_compile::compile
+  10: cargo::commands::check::exec
+  11: <cargo::cli::Exec>::exec
+  12: cargo::cli::main
+  13: cargo::main
+  14: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  15: std::rt::lang_start::<()>::{closure#0}
+  16: std::rt::lang_start_internal
+  17: _main
+    Checking espdump-CLI v0.0.1 (/Users/kaihang/hackclub/Horizons/espdump/espdump-CLI)
+error: could not compile `espdump-CLI` (bin "espdump-CLI") due to 2 previous errors
+warning: build failed, waiting for other jobs to finish...
+error: could not compile `espdump-CLI` (bin "espdump-CLI" test) due to 2 previous errors
