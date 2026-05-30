@@ -7,7 +7,7 @@
 void spi_flash_init(void);
 
 // ID
-void spi_read_jedec_id(uint8_t *buf);
+void spi_read_jedec(uint8_t *buf);
 
 // Read fast
 // Reads 'len' bytes starting at 'addr' into 'buf;
