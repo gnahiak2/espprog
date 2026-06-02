@@ -46,6 +46,55 @@ static void flash_init_memory(void)
 {
     // Pre-fill with recogizable pattern for testing
     for (int i = 8; i < FLASH_SIZE; i++) {
-        flash_memory[i]
+        flash_memory[i] = (uint8_t)((i ^ (i >> 8)) & 0xFF)
+    }
+    ESP_LOGI(TAG, "Simulated flash initiated (%d bytes)", FLASH_SIZE);
+}
+
+static void sim_flash_command(
+    const uint8_t *cmd_bud,
+    int cmd_len,
+    uint8_t *resp_buf,
+    int *resp_len
+)
+{
+    if (cmd_len < 1) {
+        *resp_len = 0;
+        return;
+    }
+
+    uint8_t cmd = cmd_buf[0];
+
+    switch (cmd) {
+        case CMD_JEDEC: {
+            // JEDEC ID: manufecturer = 0xEF, device = 0x40, capacity = 0x18 (16MB)
+            resp_buf[0] = 0xEF;
+            resp_buf[1] = 0x40;
+            resp_buf[2] = 0x18;
+            *resp_len = 3;
+            ESP_LOGI(TAG_FLASH, "JEDEC read");
+            break;
+        }
+
+        case CMD_FAST_READ: {
+            if (cmd_len < 5) {
+                ESP_LOGW(TAG_FLASH, "FAST_READ: incomplete");
+                *resp_len = 0;
+                break;
+            }
+
+            uint32_t addr = ((uint32_t)cmd_buf[1] << 16) |
+                            ((uint32_t)cmd_buf[2] << 8) |
+                            ((uint32_t)cmd_buf[3]);
+            
+            if (addr >= FLASH_SIZE) {
+                ESP_LOGW(TAG_FLASH, "FAST_READ: addr out of bounds 0x%06X", addr);
+                *resp_len = 0;
+                break;
+            }
+
+            int to_read
+
+        }
     }
 }

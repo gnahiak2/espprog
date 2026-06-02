@@ -1,4 +1,11 @@
 {
-    "idf.currentSetup": "/Users/kaihang/.espressif/v6.0.1/esp-idf",
-    "cmake.sourceDirectory": "/Users/kaihang/hackclub/Horizons/espdump/espdump-firmware"
+  "idf.currentSetup": "/Users/kaihang/.espressif/v6.0.1/esp-idf",
+  "cmake.sourceDirectory": "/Users/kaihang/hackclub/Horizons/espdump/espdump-firmware",
+  "idf.customExtraVars": {},
+  "clangd.path": "/Users/kaihang/.espressif/tools/esp-clang/esp-20.1.1_20250829/esp-clang/bin/clangd",
+  "clangd.arguments": [
+    "--background-index",
+    "--query-driver=**",
+    "--compile-commands-dir=/Users/kaihang/hackclub/Stardance/espdump/build"
+  ]
 }
