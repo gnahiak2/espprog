@@ -6,5 +6,7 @@
     "--background-index",
     "--query-driver=**",
     "--compile-commands-dir=/Users/kaihang/hackclub/Horizons/espdump/Firmware/espdump-firmware/build"
-  ]
+  ],
+  "idf.currentSetup": "/Users/kaihang/.espressif/v6.0.1/esp-idf",
+  "idf.monitorPort": "/dev/tty.usbmodem1101"
 }
